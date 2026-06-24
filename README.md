@@ -51,6 +51,7 @@ hallucination/unsafe action as a control problem rather than a model defect — 
 > **Layered Self-Regulation of Artificial Intelligence Systems: Managing Uncertainty, Preventing
 > Hallucinations, and Governing Action Across High-Risk Domains.** Ivan Andrescov, 2026.
 > SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6144150
+> · in this repo: [`paper/Layered_Self_Regulation.pdf`](paper/Layered_Self_Regulation.pdf) (166 pp.)
 
 That paper is a **conceptual framework** (the *why* and *where*). The **engine** that implements it —
 its decision principle, thresholds, formulas and verification layer — is proprietary and is **not**
