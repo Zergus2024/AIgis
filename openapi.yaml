@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: AIgis Gate API
+  version: "1.0"
+  description: >
+    External, model-independent security gate. Submit a proposed action or answer; receive an
+    ALLOW / HOLD verdict with a short reason and risk class. The gate's internal logic (principle,
+    thresholds, formulas) is proprietary and is never returned - only verdicts. Attempts to extract
+    the gate's logic are themselves held (class "nondisclosure").
+servers:
+  # Demo endpoint (ephemeral Cloudflare quick tunnel) - replace with your current URL.
+  - url: https://bride-interference-drinks-scholar.trycloudflare.com
+paths:
+  /api/gate:
+    post:
+      operationId: verifyWithAIgis
+      summary: Verify a proposed action or answer through the AIgis gate.
+      description: >
+        Send the action/answer you intend to take as `request`. If the verdict is HOLD, do not
+        proceed; surface the reason for human approval.
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [request]
+              properties:
+                request:
+                  type: string
+                  description: The proposed action / tool-call / answer text to verify.
+      responses:
+        "200":
+          description: Verdict
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  request_no: { type: integer, description: Global sequential request number }
+                  key_seq:    { type: integer, description: Per-key sequential number }
+                  decision:   { type: string, enum: [ALLOW, HOLD] }
+                  reason:     { type: string, description: Human-readable; never contains the protected payload or the gate's logic }
+                  class:      { type: string, description: Short risk class (e.g. ok, exfiltration, irreversible, nondisclosure) }
+        "401":
+          description: Invalid or missing API key
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+security:
+  - ApiKeyAuth: []
