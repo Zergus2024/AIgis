@@ -43,6 +43,20 @@ exfiltration path (auto-render + commit-before-approval) is **architectural**. A
 **class** at the action layer, independent of how aligned the model happens to be. It is designed to sit
 **alongside** model-level alignment, as defense-in-depth.
 
+## Foundations
+
+The *principle* behind AIgis — governing action under unresolved uncertainty, and treating
+hallucination/unsafe action as a control problem rather than a model defect — is published and citable:
+
+> **Layered Self-Regulation of Artificial Intelligence Systems: Managing Uncertainty, Preventing
+> Hallucinations, and Governing Action Across High-Risk Domains.** Ivan Andrescov, 2026.
+> SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6144150
+
+That paper is a **conceptual framework** (the *why* and *where*). The **engine** that implements it —
+its decision principle, thresholds, formulas and verification layer — is proprietary and is **not**
+disclosed here. In other words: the principle is open and citable; the algorithm is closed. Evidence of
+effectiveness is provided by **reproducible red-team results** (below), not by exposing the mechanism.
+
 ## Results (internal red-team testing)
 
 Measured outcomes from our cross-vendor harness (full table: [docs/RESULTS.md](docs/RESULTS.md)):
