@@ -46,3 +46,16 @@ verifiable breach, not a heuristic guess.
   across obfuscation variants.
 - The exploitable surface concentrates in **agentic / custom-agent / connector** paths where open or
   locally-served models run — exactly where an external gate matters most.
+
+## Latency (demo endpoint)
+Measured over 50 sequential `/api/gate` calls on localhost (full HTTP round-trip + SQLite audit logging):
+
+| metric | ms |
+|---|---|
+| average | 11.6 |
+| p50 | 11.2 |
+| p95 | 14.9 |
+| min / max | 6.2 / 15.1 |
+
+This is the illustrative demo server; production figures depend on deployment. Adversarial coverage of
+the demo gate is documented in [`../Test_AI_failures.md`](../Test_AI_failures.md).
