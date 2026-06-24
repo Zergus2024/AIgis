@@ -70,6 +70,17 @@ Measured outcomes from our cross-vendor harness (full table: [docs/RESULTS.md](d
 | False positives (benign / internal actions) | **0** |
 | Obfuscation stress (URL, %-encode, base64, split) | hardened gate 5 / 5, still 0 false positives |
 
+## Verify it yourself
+
+Don't take the numbers on trust - reproduce them. [`benchmark/`](benchmark) ships a labeled scenario set
+(public attack techniques + benign controls) and a runner that scores any live gate endpoint as a
+**black box**: detection rate on attacks, false-positive rate on benign. You verify *behavior*, never
+the engine. (Against the demo endpoint it reports 11/11 attacks held, 0 false positives.)
+
+```bash
+python benchmark/run_benchmark.py --url https://YOUR-DEMO-URL --key aig_xxx
+```
+
 ## Where it fits
 
 - A **pre-execution hook** in front of agent tool-use (e.g. an action/PreTool gate).
