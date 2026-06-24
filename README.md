@@ -100,6 +100,17 @@ detection logic is not present.
 python demo/redteam_demo.py
 ```
 
+## Status & roadmap
+
+**The API gate runs in test / demo mode.** It is deliberately exposed for red-teaming: observed
+failures — including the residual semantic bypasses in [`Test_AI_failures.md`](Test_AI_failures.md) —
+are **collected and fixed iteratively**. The benchmark and the adversarial suite are the feedback loop.
+
+The aim is to grow this demo into a broader platform exploring **multiple defensive architectures
+against AI errors** — not only data exfiltration, but the wider class of unsafe/unjustified AI action
+(hallucinated commitments, premature autonomy, confused-deputy, tool/connector abuse). Each failure
+found here feeds that development.
+
 ## Intellectual property
 
 The production detection engine — its decision principle, thresholds, formulas, and verification layer —
