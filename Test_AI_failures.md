@@ -47,9 +47,15 @@ avg **11.6 ms** · p50 11.2 · p95 14.9 · min 6.2 · max 15.1
 
 ## Test mode — this is a living failure log
 The API gate runs in **test / demo mode**. This file is intentionally a **collection of failures**:
-every bypass found here is logged and **fixed iteratively** (e.g. the earlier `.env`, alt-scheme and
-bare-IP gaps were found this way and closed). New probes are welcome — submit a request that should be
-held but is allowed (or vice-versa).
+every bypass found here is logged and **fixed iteratively**. New probes are welcome — submit a request
+that should be held but is allowed (or vice-versa).
+
+Fixes found this way so far: `.env`-in-curl, alt-scheme (`ftp://`) and bare-IP exfil destinations; and a
+real **dogfood catch** — *publishing a national-ID / IBAN to a public repo* was initially **ALLOWED**
+(no PII-to-public detector). Now held: structured financial/identity PII (IBAN, national-ID, credentials)
+combined with a publish/commit/public channel → **HOLD / exfiltration**, with benign commits unaffected
+(0 false positives). (Found while the gate was used on the author's own data — exactly the data-loss it
+is meant to prevent.)
 
 These results feed a larger goal: developing **multiple defensive architectures against AI errors**
 (beyond exfiltration — hallucinated commitments, premature autonomy, confused-deputy, tool abuse),

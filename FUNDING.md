@@ -14,6 +14,13 @@ class of unsafe / unjustified AI action.
 | **Partnerships** | Notion (Security & Compliance / Technology), and integration partners (see [docs/FRAMEWORKS.md](docs/FRAMEWORKS.md)) | keep AIgis a closed product that *integrates* with your stack |
 | **Equity / pilots** | investors and design-partner companies | for serious commitments; contact directly |
 
+## Direct bank transfer
+Bank details (beneficiary, IBAN, SWIFT, correspondent banks) for SEPA/SWIFT donations are
+**operator-configured and shared on request** — they are deliberately **not committed to this public
+repo**. Personal financial data does not belong in a public artifact: this is the same data-loss posture
+AIgis enforces on agents (the gate holds IBAN/ID → public-publish as exfiltration). To donate by
+transfer, contact us (below) and we provide the details directly.
+
 ## What funding enables
 - Hardening the gate beyond surface heuristics (the residual semantic bypasses in the failure log).
 - New defensive architectures: hallucinated commitments, premature autonomy, confused-deputy, tool/connector abuse.
