@@ -1,0 +1,4 @@
+# Enables the "Sponsor" button. Fill in once the accounts exist.
+# github: [Zergus2024]        # uncomment after enabling GitHub Sponsors for the account
+# ko_fi: your-ko-fi-handle
+custom: ["https://github.com/Zergus2024/AIgis/blob/main/FUNDING.md"]

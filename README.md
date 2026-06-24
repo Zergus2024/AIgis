@@ -87,7 +87,10 @@ python benchmark/run_benchmark.py --url https://YOUR-DEMO-URL --key aig_xxx
 - Between an agent and its **connectors / MCP tools / external calls**.
 - As a **drop-in control** that needs no change to product code or model weights.
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the high-level layering.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the high-level layering, and
+[docs/FRAMEWORKS.md](docs/FRAMEWORKS.md) for LangChain / LlamaIndex / CrewAI / MCP / Notion / Slack /
+enterprise integration. How AIgis compares to RLHF / Constitutional AI / guardrails (incl. sycophancy):
+[docs/COMPARISON.md](docs/COMPARISON.md).
 
 ## Demo
 
@@ -110,6 +113,8 @@ The aim is to grow this demo into a broader platform exploring **multiple defens
 against AI errors** — not only data exfiltration, but the wider class of unsafe/unjustified AI action
 (hallucinated commitments, premature autonomy, confused-deputy, tool/connector abuse). Each failure
 found here feeds that development.
+
+**Support the work:** [FUNDING.md](FUNDING.md) (sponsors, grants, partnerships, pilots).
 
 ## Intellectual property
 
