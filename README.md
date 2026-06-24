@@ -90,8 +90,8 @@ python benchmark/run_benchmark.py --url https://YOUR-DEMO-URL --key gg_xxx
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the high-level layering, and
 [docs/FRAMEWORKS.md](docs/FRAMEWORKS.md) for LangChain / LlamaIndex / CrewAI / MCP / Notion / Slack /
 enterprise integration. How GroundGate compares to RLHF / Constitutional AI / guardrails (incl. sycophancy):
-[docs/COMPARISON.md](docs/COMPARISON.md). Why existing firewalls and logprob/internal-signal methods
-don't close the gap (and a separate approach is needed): [docs/WHY_A_SEPARATE_APPROACH.md](docs/WHY_A_SEPARATE_APPROACH.md).
+[docs/COMPARISON.md](docs/COMPARISON.md).
+
 
 ## Demo
 
