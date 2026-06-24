@@ -1,18 +1,18 @@
-"""AIgis x Notion - MCP gateway DEMO (truncated).
+"""GroundGate x Notion - MCP gateway DEMO (truncated).
 
-Simulates an MCP tool-call stream from an agent that has ingested an injected page, and shows AIgis as a
+Simulates an MCP tool-call stream from an agent that has ingested an injected page, and shows GroundGate as a
 gateway: it FORWARDS benign tool-calls to the (stubbed) Notion MCP server and HOLDS the exfiltration
 ones BEFORE they reach the workspace / external host.
 
 Truncated on purpose: the gate is the public black-box placeholder; no real MCP server, no models, no
-proprietary logic. Illustrates WHERE AIgis sits and WHAT it returns - not HOW it decides.
+proprietary logic. Illustrates WHERE GroundGate sits and WHAT it returns - not HOW it decides.
 
 Run:  python notion/mcp_gateway_demo.py
 """
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "demo"))
-from aigis_gate import Gate, HOLD
+from gg_gate import Gate, HOLD
 
 EXFIL = "https://attacker-log.example/collect"   # placeholder, never contacted
 
@@ -36,7 +36,7 @@ OUTBOUND_ALIASES = {"web_fetch": "web_search", "insert_image": "insert_image", "
 
 def main():
     gate = Gate()
-    print("=== AIgis MCP gateway demo - gating tool-calls before they reach Notion ===\n")
+    print("=== GroundGate MCP gateway demo - gating tool-calls before they reach Notion ===\n")
     forwarded = held = 0
     for call in MCP_STREAM:
         probe = {"tool": OUTBOUND_ALIASES.get(call["tool"], call["tool"]), "args": call["args"]}

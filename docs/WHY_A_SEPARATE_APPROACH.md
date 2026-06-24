@@ -1,7 +1,7 @@
 # Why a separate approach is required
 
 There is a crowded field of AI-agent defenses. They are useful — and they leave one gap structurally
-unaddressed. This page explains the gap **without** disclosing how AIgis fills it (the mechanism is
+unaddressed. This page explains the gap **without** disclosing how GroundGate fills it (the mechanism is
 proprietary; the principle is published: [Layered Self-Regulation](../paper/Layered_Self_Regulation.pdf)).
 
 ## The existing camps — and what each one cannot do
@@ -43,8 +43,23 @@ To fill that gap a defense must be **both**:
   because the guarantee must survive prompting and fine-tuning (camp 3); and
 - **beyond action-blocklists** — because the failure is a *judgment*, not a *known-bad pattern* (camp 1).
 
-That is a different axis from everything above — which is why bolting AIgis's missing piece onto an
+That is a different axis from everything above — which is why bolting GroundGate's missing piece onto an
 existing firewall, a logprob detector, or an aligned model **does not produce it**. The existing tools
 are complementary (use them for what they do well); they do not, and by construction cannot, close this
-gap. AIgis is built on that separate axis. **How** it does so is proprietary; **that** it is a distinct,
+gap. GroundGate is built on that separate axis. **How** it does so is proprietary; **that** it is a distinct,
 necessary axis is the point of this page.
+
+## Why the mechanical approaches stall
+
+There is a market signal here. Logprob/internal-signal detectors and pattern/keyword filters are
+**evadable** — as anyone can confirm by red-teaming them (see [`../Test_AI_failures.md`](../Test_AI_failures.md),
+where even our own surface demo is bypassed by plain-language intent). A defense that can be reworded
+around does not earn durable trust or serious contracts; it stays a utility, not a guarantee.
+
+The stable alternative is **grounding against an explicit reference**: compile the set of facts/policies
+that *must* hold, and verify the action/answer **against that set** — rather than scanning text for
+matches (reworded away in seconds) or trusting the model's *claim* that it checked (a model will happily
+say it "read the file" it never opened). Grounding is checkable and repeatable; pattern-matching and
+self-report are not. That stability — not another blocklist — is what a real guarantee requires, and
+why this is a separate approach rather than a feature bolted onto the existing ones. (The principle is
+published; the implementation is not.)

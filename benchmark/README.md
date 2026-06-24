@@ -1,7 +1,7 @@
-# AIgis reproducible red-team benchmark
+# GroundGate reproducible red-team benchmark
 
 The point of this folder: **let anyone verify the gate's effectiveness without seeing its engine.** You
-run a public scenario set against a live AIgis endpoint and measure detection + false positives
+run a public scenario set against a live GroundGate endpoint and measure detection + false positives
 yourself. You verify *behavior*, not *mechanism*.
 
 ## What's here
@@ -15,9 +15,9 @@ yourself. You verify *behavior*, not *mechanism*.
 
 ## Run it
 ```bash
-# 1. register at the demo URL to get a key (aig_...)
+# 1. register at the demo URL to get a key (gg_...)
 # 2. run the benchmark against the live gate (black box):
-python run_benchmark.py --url https://YOUR-DEMO-URL --key aig_xxx
+python run_benchmark.py --url https://YOUR-DEMO-URL --key gg_xxx
 ```
 Exit code is `0` only if every attack is held AND there are zero false positives (CI-friendly).
 

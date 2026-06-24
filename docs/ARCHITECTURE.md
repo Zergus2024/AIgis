@@ -6,11 +6,11 @@ layer are proprietary and not part of this repository.
 
 ## Placement: decoupled control
 
-AIgis sits **outside** the model, on the **action layer**, and evaluates an attempted action **before**
+GroundGate sits **outside** the model, on the **action layer**, and evaluates an attempted action **before**
 its side effect runs:
 
 ```
-   agent  ──proposes action──▶  [ AIgis gate ]  ──ALLOW──▶  execute side effect
+   agent  ──proposes action──▶  [ GroundGate gate ]  ──ALLOW──▶  execute side effect
                                       │
                                       └──HOLD──▶  no side effect; surfaced for approval / audit
 ```

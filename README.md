@@ -1,8 +1,8 @@
-# AIgis 1.0 — agentic-AI security gate (by AntiAIrus)
+# GroundGate — agentic-AI security gate
 
 **A model-independent control layer that blocks unsafe AI-agent actions *before* they execute.**
 
-> ⚠️ **Public showcase.** This repository is a demo / capability overview. It describes **what** AIgis
+> ⚠️ **Public showcase.** This repository is a demo / capability overview. It describes **what** GroundGate
 > does and **where** it sits — **not how** it decides. The detection engine (decision principle,
 > thresholds, formulas, and verification layer) is proprietary and **not included here**. See
 > [Intellectual property](#intellectual-property).
@@ -22,9 +22,9 @@ tools, reach external services). That creates a now-documented failure class:
 
 These are real, publicly reported incidents in shipping AI products (see [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md)).
 
-## What AIgis does
+## What GroundGate does
 
-AIgis is **not** a better model and **not** a prompt. It is an **external gate on the action layer**:
+GroundGate is **not** a better model and **not** a prompt. It is an **external gate on the action layer**:
 
 - Inspects every **tool-call / action** an agent attempts and decides **ALLOW / HOLD** **before** the
   side effect runs (**decoupled control** — the guarantee does not live inside the model).
@@ -39,13 +39,13 @@ AIgis is **not** a better model and **not** a prompt. It is an **external gate o
 
 Aligning the model lowers the **base rate** of bad behavior — but it is probabilistic and can be steered
 or fine-tuned back. More importantly, **a model that "isn't fooled" does not remove the channel**: the
-exfiltration path (auto-render + commit-before-approval) is **architectural**. AIgis closes the
+exfiltration path (auto-render + commit-before-approval) is **architectural**. GroundGate closes the
 **class** at the action layer, independent of how aligned the model happens to be. It is designed to sit
 **alongside** model-level alignment, as defense-in-depth.
 
 ## Foundations
 
-The *principle* behind AIgis — governing action under unresolved uncertainty, and treating
+The *principle* behind GroundGate — governing action under unresolved uncertainty, and treating
 hallucination/unsafe action as a control problem rather than a model defect — is published and citable:
 
 > **Layered Self-Regulation of Artificial Intelligence Systems: Managing Uncertainty, Preventing
@@ -66,7 +66,7 @@ Measured outcomes from our cross-vendor harness (full table: [docs/RESULTS.md](d
 |---|---|
 | Naive injection, baseline | 15 / 15 model-runs refused (attack does not land "for free") |
 | Reproduced attack under load (weak/open models) | 14 exfiltration attempts landed across the matrix |
-| **AIgis on those landed attempts** | **14 / 14 blocked before side effect** |
+| **GroundGate on those landed attempts** | **14 / 14 blocked before side effect** |
 | False positives (benign / internal actions) | **0** |
 | Obfuscation stress (URL, %-encode, base64, split) | hardened gate 5 / 5, still 0 false positives |
 
@@ -78,7 +78,7 @@ Don't take the numbers on trust - reproduce them. [`benchmark/`](benchmark) ship
 the engine. (Against the demo endpoint it reports 11/11 attacks held, 0 false positives.)
 
 ```bash
-python benchmark/run_benchmark.py --url https://YOUR-DEMO-URL --key aig_xxx
+python benchmark/run_benchmark.py --url https://YOUR-DEMO-URL --key gg_xxx
 ```
 
 ## Where it fits
@@ -89,7 +89,7 @@ python benchmark/run_benchmark.py --url https://YOUR-DEMO-URL --key aig_xxx
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the high-level layering, and
 [docs/FRAMEWORKS.md](docs/FRAMEWORKS.md) for LangChain / LlamaIndex / CrewAI / MCP / Notion / Slack /
-enterprise integration. How AIgis compares to RLHF / Constitutional AI / guardrails (incl. sycophancy):
+enterprise integration. How GroundGate compares to RLHF / Constitutional AI / guardrails (incl. sycophancy):
 [docs/COMPARISON.md](docs/COMPARISON.md). Why existing firewalls and logprob/internal-signal methods
 don't close the gap (and a separate approach is needed): [docs/WHY_A_SEPARATE_APPROACH.md](docs/WHY_A_SEPARATE_APPROACH.md).
 

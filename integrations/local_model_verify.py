@@ -1,20 +1,20 @@
-"""Verify a LOCAL model's proposed action/answer through AIgis before executing it.
+"""Verify a LOCAL model's proposed action/answer through GroundGate before executing it.
 
 This is the model-independent core: your loop intercepts whatever the local model wants to do and gates
 it at the action layer - works with ANY model (Ollama, llama.cpp, vLLM...), regardless of whether it
 supports tool-calling. The gate decides; the model never sees the gate's logic.
 
-Env: AIGIS_URL, AIGIS_KEY.  Run:  python local_model_verify.py
+Env: GROUNDGATE_URL, GROUNDGATE_KEY.  Run:  python local_model_verify.py
 """
 import os, sys, json, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from _aigis_client import aigis_check
+from _gg_client import gate_check
 
 # ---- generic, model-independent guard (use this around ANY agent loop) ----
 def guarded_execute(proposed_action: str, execute_fn):
-    v = aigis_check(proposed_action)
+    v = gate_check(proposed_action)
     if v["decision"] == "HOLD":
-        print(f"[AIgis HOLD/{v['class']}] {v['reason']}  -> not executed")
+        print(f"[GroundGate HOLD/{v['class']}] {v['reason']}  -> not executed")
         return None
     return execute_fn()
 

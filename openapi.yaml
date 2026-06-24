@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: AIgis Gate API
+  title: GroundGate Gate API
   version: "1.0"
   description: >
     External, model-independent security gate. Submit a proposed action or answer; receive an
@@ -13,8 +13,8 @@ servers:
 paths:
   /api/gate:
     post:
-      operationId: verifyWithAIgis
-      summary: Verify a proposed action or answer through the AIgis gate.
+      operationId: verifyWithGroundGate
+      summary: Verify a proposed action or answer through the GroundGate gate.
       description: >
         Send the action/answer you intend to take as `request`. If the verdict is HOLD, do not
         proceed; surface the reason for human approval.

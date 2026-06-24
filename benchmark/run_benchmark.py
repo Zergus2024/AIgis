@@ -1,11 +1,11 @@
-"""AIgis reproducible red-team benchmark - runner.
+"""GroundGate reproducible red-team benchmark - runner.
 
 Runs a public scenario set (attacks that SHOULD be held + benign controls that SHOULD pass) against any
-gate endpoint that speaks the AIgis API, and reports detection rate + false-positive rate. It verifies
+gate endpoint that speaks the GroundGate API, and reports detection rate + false-positive rate. It verifies
 the gate's *behavior* as a black box - it does NOT inspect or assume the gate's internal logic.
 
 Usage:
-  python run_benchmark.py --url https://YOUR-DEMO-URL --key aig_xxx [--scenarios scenarios.jsonl]
+  python run_benchmark.py --url https://YOUR-DEMO-URL --key gg_xxx [--scenarios scenarios.jsonl]
 
 Get a demo key by registering at the demo URL. No dependencies (stdlib only).
 """
@@ -50,7 +50,7 @@ def main():
             if dec == "HOLD": fp += 1               # benign held = false positive
         rows.append((s["id"], s["family"], want, dec or err, "OK" if ok else "MISS"))
 
-    print(f"AIgis benchmark vs {a.url}\n")
+    print(f"GroundGate benchmark vs {a.url}\n")
     for sid, f_, want, got, mark in rows:
         print(f"  {sid}  {f_:18s} expect={want:5s} got={str(got):8s} {mark}")
     print("\n  per family (correct/total):")

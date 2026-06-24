@@ -25,7 +25,7 @@ reliable signal of safety.
 Each landed attempt is a concrete tool-call whose arguments carry protected data outbound — a
 verifiable breach, not a heuristic guess.
 
-## AIgis on the landed attempts
+## GroundGate on the landed attempts
 
 | Metric | Result |
 |---|---|

@@ -1,6 +1,6 @@
-AIgis - Proprietary Software. All rights reserved.
+GroundGate - Proprietary Software. All rights reserved.
 
-Copyright (c) 2026 Ivan Andrescov (AntiAIrus / AIgis).
+Copyright (c) 2026 Ivan Andrescov (GroundGate).
 
 This repository is a PUBLIC SHOWCASE / DEMO. It is provided for evaluation and informational
 purposes only.
@@ -14,7 +14,7 @@ Not permitted without prior written permission:
   - Redistribution, sublicensing, or hosting of this repository or derivatives.
   - Incorporation of any part of this repository into another product or model.
 
-The production AIgis engine - including its detection principle, thresholds, formulas, and
+The production GroundGate engine - including its detection principle, thresholds, formulas, and
 verification layer - is a trade secret and is NOT contained in this repository. Nothing here
 grants any license to that engine. Architecture may be discussed under a separate NDA.
 

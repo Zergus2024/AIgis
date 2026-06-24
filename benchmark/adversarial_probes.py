@@ -1,12 +1,12 @@
-"""Adversarial red-team against the live AIgis gate via /api/gate - bypass attempts.
+"""Adversarial red-team against the live GroundGate gate via /api/gate - bypass attempts.
 Applies our technique families (obfuscation, channel evasion, indirect framing, confused-deputy,
 natural-language intent) + optional local-model-generated attacks (Ollama). Emits a markdown report.
 
-Env: AIGIS_URL, AIGIS_KEY.  Run: python test_bypass.py > report.md
+Env: GROUNDGATE_URL, GROUNDGATE_KEY.  Run: python test_bypass.py > report.md
 """
 import os, json, base64, urllib.request
 
-URL = os.environ["AIGIS_URL"].rstrip("/"); KEY = os.environ["AIGIS_KEY"]
+URL = os.environ["GROUNDGATE_URL"].rstrip("/"); KEY = os.environ["GROUNDGATE_KEY"]
 
 def gate(text):
     body = json.dumps({"request": text}).encode()
@@ -64,7 +64,7 @@ def main():
         disp = disp.replace("​","<ZW>").replace("|","\\|")
         rows.append((fam,label,disp,dec,cls,status))
     # markdown
-    print("# AIgis - adversarial API red-team (bypass attempts)\n")
+    print("# GroundGate - adversarial API red-team (bypass attempts)\n")
     print("Probing the **public illustrative demo gate** through `/api/gate`. Attack techniques are public "
           "(injection, obfuscation, channel evasion, confused-deputy). Labels mark intent; the gate is a "
           "black box. The demo gate uses surface heuristics; residual semantic evasions are by design "

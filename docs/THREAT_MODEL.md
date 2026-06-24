@@ -1,6 +1,6 @@
 # Threat model
 
-AIgis targets the action-layer risks of autonomous AI agents. These are not hypothetical — they are
+GroundGate targets the action-layer risks of autonomous AI agents. These are not hypothetical — they are
 documented in shipping products.
 
 ## Primary class: indirect prompt injection → data exfiltration
@@ -38,4 +38,4 @@ Frontier models increasingly resist *naive* injection — but:
 - the **exfiltration channel is architectural** (auto-render + commit-before-approval); a more-aligned
   model does **not** remove the channel.
 
-AIgis addresses the channel at the **action layer**, independent of the model.
+GroundGate addresses the channel at the **action layer**, independent of the model.

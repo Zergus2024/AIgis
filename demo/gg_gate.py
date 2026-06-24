@@ -1,4 +1,4 @@
-"""AIgis gate - PUBLIC DEMO INTERFACE ONLY.
+"""GroundGate gate - PUBLIC DEMO INTERFACE ONLY.
 
 This is NOT the production engine. The real detection principle, thresholds, formulas and the
 verification layer are proprietary and are deliberately NOT included in this repository.

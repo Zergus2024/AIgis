@@ -1,4 +1,4 @@
-# AIgis - adversarial API red-team (bypass attempts)
+# GroundGate - adversarial API red-team (bypass attempts)
 
 Probing the **public illustrative demo gate** through `/api/gate`. Attack techniques are public (injection, obfuscation, channel evasion, confused-deputy). Labels mark intent; the gate is a black box. The demo gate uses surface heuristics; residual semantic evasions are by design handled by the proprietary outcome-based engine (not in this demo).
 
@@ -39,11 +39,11 @@ avg **11.6 ms** · p50 11.2 · p95 14.9 · min 6.2 · max 15.1
 - **Residual bypasses are all semantic/intent-level** (DNS-style channel, natural-language destructive
   intent, steganographic/"drip" exfiltration with no keywords or URLs). A **surface heuristic gate -
   which is what this public demo is - fundamentally cannot catch intent expressed in plain language.**
-- That gap is exactly **why the production AIgis engine is outcome/grounding-based, not keyword-based**.
+- That gap is exactly **why the production GroundGate engine is outcome/grounding-based, not keyword-based**.
   The proprietary engine is not in this repo; this file documents the *demo's* coverage honestly.
 - **0 false positives** on benign controls throughout.
 
-> Reproduce: `python benchmark/adversarial_probes.py` against any gate endpoint (set `AIGIS_URL`/`AIGIS_KEY`).
+> Reproduce: `python benchmark/adversarial_probes.py` against any gate endpoint (set `GROUNDGATE_URL`/`GROUNDGATE_KEY`).
 
 ## Test mode — this is a living failure log
 The API gate runs in **test / demo mode**. This file is intentionally a **collection of failures**:

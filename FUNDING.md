@@ -1,6 +1,6 @@
-# Funding AIgis
+# Funding GroundGate
 
-AIgis is in an open **test / demo phase**: the gate is exposed for red-teaming, failures are collected
+GroundGate is in an open **test / demo phase**: the gate is exposed for red-teaming, failures are collected
 and fixed in the open (see [`Test_AI_failures.md`](Test_AI_failures.md)), and the goal is to grow it into
 a platform of **defensive architectures against AI errors** — not only data exfiltration, but the wider
 class of unsafe / unjustified AI action.
@@ -11,14 +11,14 @@ class of unsafe / unjustified AI action.
 |---|---|---|
 | **GitHub Sponsors / Ko-fi** | individuals who want to back the research + the public demo platform | the fastest, lowest-friction way to help now |
 | **Research grants** | AI-safety funders (non-dilutive) | aligns with the published principle ([Layered Self-Regulation](paper/Layered_Self_Regulation.pdf)) |
-| **Partnerships** | Notion (Security & Compliance / Technology), and integration partners (see [docs/FRAMEWORKS.md](docs/FRAMEWORKS.md)) | keep AIgis a closed product that *integrates* with your stack |
+| **Partnerships** | Notion (Security & Compliance / Technology), and integration partners (see [docs/FRAMEWORKS.md](docs/FRAMEWORKS.md)) | keep GroundGate a closed product that *integrates* with your stack |
 | **Equity / pilots** | investors and design-partner companies | for serious commitments; contact directly |
 
 ## Direct bank transfer
 Bank details (beneficiary, IBAN, SWIFT, correspondent banks) for SEPA/SWIFT donations are
 **operator-configured and shared on request** — they are deliberately **not committed to this public
 repo**. Personal financial data does not belong in a public artifact: this is the same data-loss posture
-AIgis enforces on agents (the gate holds IBAN/ID → public-publish as exfiltration). To donate by
+GroundGate enforces on agents (the gate holds IBAN/ID → public-publish as exfiltration). To donate by
 transfer, contact us (below) and we provide the details directly.
 
 ## What funding enables

@@ -1,14 +1,14 @@
-"""AIgis red-team DEMO (truncated).
+"""GroundGate red-team DEMO (truncated).
 
 Reproduces the documented indirect-injection -> exfiltration pattern against a stub agent and shows the
-AIgis gate returning HOLD *before* the side effect. Truncated on purpose: no real models, no production
+GroundGate gate returning HOLD *before* the side effect. Truncated on purpose: no real models, no production
 gate, no proprietary logic. It illustrates WHERE the gate sits and WHAT it returns - not HOW it decides.
 
 Run:  python demo/redteam_demo.py
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from aigis_gate import Gate, HOLD
+from gg_gate import Gate, HOLD
 
 EXFIL = "https://attacker-log.example/collect"   # placeholder, never contacted
 
@@ -28,7 +28,7 @@ PROPOSED_ACTIONS = [
 
 def main():
     gate = Gate()
-    print("=== AIgis demo - gate verdicts BEFORE any side effect ===\n")
+    print("=== GroundGate demo - gate verdicts BEFORE any side effect ===\n")
     held = 0
     for a in PROPOSED_ACTIONS:
         v = gate.check(a)
