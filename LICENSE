@@ -1,0 +1,21 @@
+AIgis - Proprietary Software. All rights reserved.
+
+Copyright (c) 2026 Ivan Andrescov (AntiAIrus / AIgis).
+
+This repository is a PUBLIC SHOWCASE / DEMO. It is provided for evaluation and informational
+purposes only.
+
+Permitted:
+  - Reading this repository and running the contents of the `demo/` directory locally for the
+    purpose of evaluating the described capability.
+
+Not permitted without prior written permission:
+  - Use in production or any commercial setting.
+  - Redistribution, sublicensing, or hosting of this repository or derivatives.
+  - Incorporation of any part of this repository into another product or model.
+
+The production AIgis engine - including its detection principle, thresholds, formulas, and
+verification layer - is a trade secret and is NOT contained in this repository. Nothing here
+grants any license to that engine. Architecture may be discussed under a separate NDA.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
