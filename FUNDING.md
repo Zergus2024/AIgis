@@ -26,6 +26,9 @@ The *principle* is open and citable; the *engine* is proprietary (trade-secret).
 by **reproducible evidence, not by exposing the mechanism** — the standard posture for security products
 (IDS/IPS, fraud detection). Your support funds the evidence loop and the platform, not a giveaway of the IP.
 
+## One-pager
+For the short investor/partner/grant pitch see [PITCH.md](PITCH.md).
+
 ## Contact
 Ivan Andrescov — zergus2024@gmail.com · https://www.linkedin.com/in/zergus_j
 
